@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5796753577462822181}
   - component: {fileID: 5685173297773145460}
   - component: {fileID: 8492478501993547760}
+  - component: {fileID: 3094040218841693766}
   - component: {fileID: 3829490744596916247}
   m_Layer: 0
   m_Name: Cabeza
@@ -84,6 +85,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3094040218841693766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3268781088418802858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bea21fb5c4c9b46a0460a6d7177f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bomba: 0
+  puntaje: 100
+  pcabeza: 200
 --- !u!135 &3829490744596916247
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -116,6 +132,7 @@ GameObject:
   - component: {fileID: 2412099606971312117}
   - component: {fileID: 4565019262656904703}
   - component: {fileID: 6744003274738047671}
+  - component: {fileID: 8935857158714286402}
   - component: {fileID: 3143664205009177653}
   - component: {fileID: 6533041529697674016}
   - component: {fileID: 3190644913141376982}
@@ -193,6 +210,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8935857158714286402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3458889262871465655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bea21fb5c4c9b46a0460a6d7177f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bomba: 0
+  puntaje: 100
+  pcabeza: 200
 --- !u!114 &3143664205009177653
 MonoBehaviour:
   m_ObjectHideFlags: 0
