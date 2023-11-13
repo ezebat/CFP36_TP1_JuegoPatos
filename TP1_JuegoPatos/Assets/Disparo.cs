@@ -25,13 +25,14 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 // El clic ha golpeado un objeto
                 GameObject objetoGolpeado = hit.collider.gameObject;
-                if (objetoGolpeado.CompareTag("Objetivo"))
-                {
-                    // Destruye el objeto
-                    Destroy(objetoGolpeado);
-                    Debug.Log("Clic izquierdo destruyó el objeto: " + objetoGolpeado.name);
-                }
-                   
+                GameObject objetoQueGolpea = this.gameObject;  // Este objeto, el que contiene el script
+
+                Debug.Log("Clic izquierdo detectado en el objeto: " + objetoGolpeado.name);
+                Debug.Log("Objeto que golpea: " + objetoQueGolpea.name);
+
+                // Destruye el objeto golpeado
+                Destroy(objetoGolpeado);
+
             }
         }
     }
