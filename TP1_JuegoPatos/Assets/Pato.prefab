@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8492478501993547760}
   - component: {fileID: 3094040218841693766}
   - component: {fileID: 3829490744596916247}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cabeza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 3143664205009177653}
   - component: {fileID: 6533041529697674016}
   - component: {fileID: 3190644913141376982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 3807001540210029189}
   - component: {fileID: 1131676661424587859}
   - component: {fileID: 7018117351584303999}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
