@@ -100,7 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomba: 0
   puntaje: 100
-  pcabeza: 200
 --- !u!135 &3829490744596916247
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -240,7 +239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomba: 0
   puntaje: 100
-  pcabeza: 200
 --- !u!114 &3143664205009177653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +300,7 @@ GameObject:
   - component: {fileID: 3843999456213958479}
   - component: {fileID: 3807001540210029189}
   - component: {fileID: 1131676661424587859}
+  - component: {fileID: 275966315312460001}
   - component: {fileID: 1605308099720785559}
   - component: {fileID: 7018117351584303999}
   m_Layer: 6
@@ -376,6 +375,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &275966315312460001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750645799020161253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bea21fb5c4c9b46a0460a6d7177f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bomba: 0
+  puntaje: 300
 --- !u!114 &1605308099720785559
 MonoBehaviour:
   m_ObjectHideFlags: 0

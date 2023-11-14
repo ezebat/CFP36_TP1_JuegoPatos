@@ -300,6 +300,15 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 64
+  cooldown: 1
+  puntaje: 0
+  bombas: 3
+  bombita: {fileID: 2781083344896446812, guid: 4afeac9de7ab24c4ba4aec7db2616210, type: 3}
+  tiempoprueva: 25
+  cuentabombas: 3
+  tiempomax: 5
+  distanciamin: 10
+  distanciamax: 1000
 --- !u!1 &932302406
 GameObject:
   m_ObjectHideFlags: 0

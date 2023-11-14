@@ -9,6 +9,14 @@ public class InvocaPato : MonoBehaviour
     public int velocidadpato = 10;
     public int tiempodevida = 3;
 
+    public int puntoscuerpo = 100;
+    public int puntoscabeza = 200;
+    public int puntospico = 300;
+    public int puntoscuerpoespecial = 200;
+    public int puntoscabezaespecial = 500;
+    public int puntospicoespecial = 900;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +36,9 @@ public class InvocaPato : MonoBehaviour
         GameObject espato = Instantiate(patito, transform.position, transform.rotation); 
         espato.GetComponent<Movimientopato>().velocidad = velocidadpato;//poder modificar la velocidad del pato desde el invocador
         espato.GetComponent<Movimientopato>().tiempo = tiempodevida;
+        espato.GetComponent<Puntajeybomba>().puntaje = puntoscuerpo;
+        espato.GetComponent<cambiarcabeza>().cabeza.GetComponent<Puntajeybomba>().puntaje = puntoscabeza;
+        espato.GetComponent<cambiarcabeza>().pico.GetComponent<Puntajeybomba>().puntaje = puntospico;
 
         if (especial > 5) {
             espato.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
@@ -36,11 +47,12 @@ public class InvocaPato : MonoBehaviour
             espato.GetComponent<Renderer>().material.color = new Color(Random.Range(0, 255) / 255f, Random.Range(0, 255) / 255f, Random.Range(0, 255) / 255f);
             espato.GetComponent<cambiarcabeza>().cabeza.GetComponent<Renderer>().material.color = espato.GetComponent<Renderer>().material.color;
             espato.GetComponent<Puntajeybomba>().bomba = true;
-            espato.GetComponent<Puntajeybomba>().puntaje = 200;
-            espato.GetComponent<Puntajeybomba>().pcabeza = 500;
+            espato.GetComponent<Puntajeybomba>().puntaje = puntoscuerpoespecial;
             espato.GetComponent<cambiarcabeza>().cabeza.GetComponent<Puntajeybomba>().bomba = true;
-            espato.GetComponent<cambiarcabeza>().cabeza.GetComponent<Puntajeybomba>().puntaje = 200;
-            espato.GetComponent<cambiarcabeza>().cabeza.GetComponent<Puntajeybomba>().pcabeza = 500;
+            espato.GetComponent<cambiarcabeza>().cabeza.GetComponent<Puntajeybomba>().puntaje = puntoscabezaespecial;
+            espato.GetComponent<cambiarcabeza>().pico.GetComponent<Puntajeybomba>().bomba = true;
+            espato.GetComponent<cambiarcabeza>().pico.GetComponent<Puntajeybomba>().puntaje = puntospicoespecial;
+
         }
 
 
