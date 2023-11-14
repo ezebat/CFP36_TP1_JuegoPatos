@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &257302324
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3151193913916609004, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: m_Name
+      value: Invocador (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851865010839642002, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: tiempodevida
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851865010839642002, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: velocidadpato
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851865010839642002, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: tiempocreacion
+      value: 70
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
 --- !u!1 &765735392
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +446,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5851865010839642002, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: tiempodevida
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851865010839642002, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: velocidadpato
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851865010839642002, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
+      propertyPath: tiempocreacion
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -389,3 +470,4 @@ SceneRoots:
   - {fileID: 765735395}
   - {fileID: 932302408}
   - {fileID: 1616941474}
+  - {fileID: 257302324}

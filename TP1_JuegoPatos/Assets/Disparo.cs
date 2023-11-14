@@ -32,7 +32,10 @@ public class NewBehaviourScript : MonoBehaviour
                 Debug.Log("Objeto que golpea: " + objetoQueGolpea.name);
 
                 // Destruye el objeto golpeado
-                Destroy(objetoGolpeado);
+                
+                Destroy(objetoGolpeado.GetComponent<cambiarcabeza>().cabeza);
+                Destroy(objetoGolpeado.GetComponent<cambiarcabeza>().cuerpo);
+                Destroy(objetoGolpeado.GetComponent<cambiarcabeza>().pico);
 
             }
         }

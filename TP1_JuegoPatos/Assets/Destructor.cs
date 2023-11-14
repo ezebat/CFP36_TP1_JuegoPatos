@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cambiarcabeza : MonoBehaviour
+public class Destructor : MonoBehaviour
 {
-    public GameObject cabeza;
-    public GameObject pico;
-    public GameObject cuerpo;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +14,10 @@ public class cambiarcabeza : MonoBehaviour
     void Update()
     {
         
+        Invoke("destruir", 1);
     }
-    
+    public void destruir()
+    {
+        Destroy(gameObject);
+    }
 }

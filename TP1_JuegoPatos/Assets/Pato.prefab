@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8492478501993547760}
   - component: {fileID: 3094040218841693766}
   - component: {fileID: 3829490744596916247}
+  - component: {fileID: 3056648299773086083}
   m_Layer: 6
   m_Name: Cabeza
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3268781088418802858}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.456, z: 0.492}
+  m_LocalPosition: {x: 0, y: 0.456, z: 0.497}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -121,6 +122,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3056648299773086083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3268781088418802858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a563eeca5de316f4abb48235a49ebc92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cabeza: {fileID: 3268781088418802858}
+  pico: {fileID: 4750645799020161253}
+  cuerpo: {fileID: 3458889262871465655}
 --- !u!1 &3458889262871465655
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,6 +268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cabeza: {fileID: 3268781088418802858}
+  pico: {fileID: 4750645799020161253}
+  cuerpo: {fileID: 3458889262871465655}
 --- !u!135 &3190644913141376982
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -284,6 +302,7 @@ GameObject:
   - component: {fileID: 3843999456213958479}
   - component: {fileID: 3807001540210029189}
   - component: {fileID: 1131676661424587859}
+  - component: {fileID: 1605308099720785559}
   - component: {fileID: 7018117351584303999}
   m_Layer: 6
   m_Name: Pico
@@ -357,6 +376,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1605308099720785559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750645799020161253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a563eeca5de316f4abb48235a49ebc92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cabeza: {fileID: 3268781088418802858}
+  pico: {fileID: 4750645799020161253}
+  cuerpo: {fileID: 3458889262871465655}
 --- !u!65 &7018117351584303999
 BoxCollider:
   m_ObjectHideFlags: 0

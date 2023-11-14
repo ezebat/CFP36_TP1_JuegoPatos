@@ -6,7 +6,8 @@ public class InvocaPato : MonoBehaviour
 {
     public GameObject patito;
     public int tiempocreacion = 25;
-
+    public int velocidadpato = 10;
+    public int tiempodevida = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,9 @@ public class InvocaPato : MonoBehaviour
         float especial = Random.Range(0, 10);
         
 
-        GameObject espato = Instantiate(patito, transform.position, transform.rotation);
+        GameObject espato = Instantiate(patito, transform.position, transform.rotation); 
+        espato.GetComponent<Movimientopato>().velocidad = velocidadpato;//poder modificar la velocidad del pato desde el invocador
+        espato.GetComponent<Movimientopato>().tiempo = tiempodevida;
 
         if (especial > 5) {
             espato.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
