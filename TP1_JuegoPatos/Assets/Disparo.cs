@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public LayerMask layer;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class NewBehaviourScript : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 100f, layer))
             {
                 // El clic ha golpeado un objeto
                 GameObject objetoGolpeado = hit.collider.gameObject;
