@@ -5,6 +5,7 @@ using UnityEngine.XR;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public GameObject disparadorray;
     public LayerMask layer;
     public int cooldown = 3;
     float auxreloj = 0;
@@ -13,6 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     //para la bomba
     public GameObject bombita;
+    public GameObject disparadorbomba;
     public int tiempoprueva = 25;
     public int cuentabombas = 3;
     float impulso = 0;
@@ -35,20 +37,27 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         //script disparo
+        //Debug.DrawLine(disparadorray.transform.position, (disparadorray.transform.forward * 1000000) + disparadorray.transform.position, Color.red);
         if (Time.time > auxreloj)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 auxreloj = Time.time + cooldown;
-                print(auxreloj);
+                //print(auxreloj);
                 // Se ha hecho clic izquierdo
-                Vector3 mousePosition = Input.mousePosition;
-                Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+                //Vector3 mousePosition = Input.mousePosition;
+                //Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+                //Ray ray = new(transform.position, disparadorray.transform.forward);
+                
+                Vector3 ray = disparadorray.transform.position;
+                Vector3 ray2 = disparadorray.transform.forward;
                 RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit, 100f, layer))
+
+                if (Physics.Raycast(ray,ray2, out hit,1000000f,layer))
                 {
                     // El clic ha golpeado un objeto
+                    print (hit.collider.gameObject.name);
                     GameObject objetoGolpeado = hit.collider.gameObject;
                     GameObject objetoQueGolpea = this.gameObject;  // Este objeto, el que contiene el script
 
@@ -83,16 +92,16 @@ public class NewBehaviourScript : MonoBehaviour
             if (bombas > 0)
             {
                 impulso = (Time.time - auximpulso);
-                if (impulso > 5) 
+                if (impulso > tiempomax) 
                 {
-                    impulso = 5;
+                    impulso = tiempomax;
                 }
-
+                impulso = (impulso * distanciamax) + distanciamin;
                 print(impulso);
 
-                float potenciafinal = impulso * 3;
-                GameObject esbomba = Instantiate(bombita, transform.position, transform.rotation);
-                esbomba.GetComponent<Renderer>().transform.Translate(0, impulso * Time.deltaTime, potenciafinal * Time.deltaTime);
+                //float potenciafinal = impulso * 3;
+                bombita = Instantiate(bombita, transform.position, transform.rotation);
+                bombita.GetComponent<Rigidbody>().AddForce((disparadorbomba.transform.forward * impulso)+ ((disparadorbomba.transform.up * impulso)));
                 bombas = bombas - 1;
                 print(bombas);
             }
