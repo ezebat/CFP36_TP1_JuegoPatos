@@ -17,7 +17,7 @@ public class MovimientoBomba : MonoBehaviour
     void Update()
     {
         poder = Random.Range(1, 10);
-        transform.Translate(0, angulo * Time.deltaTime, poder * Time.deltaTime);
+        transform.Translate(0, (poder/100) * Time.deltaTime, poder * Time.deltaTime);
     }
 
     public void destruirb()

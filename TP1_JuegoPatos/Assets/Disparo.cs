@@ -89,8 +89,10 @@ public class NewBehaviourScript : MonoBehaviour
                 }
 
                 print(impulso);
-                
+
+                float potenciafinal = impulso * 3;
                 GameObject esbomba = Instantiate(bombita, transform.position, transform.rotation);
+                esbomba.GetComponent<Renderer>().transform.Translate(0, impulso * Time.deltaTime, potenciafinal * Time.deltaTime);
                 bombas = bombas - 1;
                 print(bombas);
             }
