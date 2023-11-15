@@ -57,12 +57,12 @@ public class NewBehaviourScript : MonoBehaviour
                 if (Physics.Raycast(ray,ray2, out hit,1000000f,layer))
                 {
                     // El clic ha golpeado un objeto
-                    print (hit.collider.gameObject.name);
+                    //print (hit.collider.gameObject.name);
                     GameObject objetoGolpeado = hit.collider.gameObject;
                     GameObject objetoQueGolpea = this.gameObject;  // Este objeto, el que contiene el script
 
-                    Debug.Log("Clic izquierdo detectado en el objeto: " + objetoGolpeado.name);
-                    Debug.Log("Objeto que golpea: " + objetoQueGolpea.name);
+                    //Debug.Log("Clic izquierdo detectado en el objeto: " + objetoGolpeado.name);
+                    //Debug.Log("Objeto que golpea: " + objetoQueGolpea.name);
 
                     // Destruye el objeto golpeado
 
@@ -76,7 +76,7 @@ public class NewBehaviourScript : MonoBehaviour
                         print(bombas);
                     }
                     puntaje = puntaje + objetoGolpeado.GetComponent<Puntajeybomba>().puntaje;
-                    print(puntaje);
+                    print("Tu puntaje es " + puntaje);
 
                 }
             }
@@ -97,13 +97,13 @@ public class NewBehaviourScript : MonoBehaviour
                     impulso = tiempomax;
                 }
                 impulso = (impulso * distanciamax) + distanciamin;
-                print(impulso);
+                //print(impulso);
 
                 //float potenciafinal = impulso * 3;
                 bombita = Instantiate(bombita, transform.position, transform.rotation);
                 bombita.GetComponent<Rigidbody>().AddForce((disparadorbomba.transform.forward * impulso)+ ((disparadorbomba.transform.up * impulso)));
                 bombas = bombas - 1;
-                print(bombas);
+                print("bombas actuales = "+bombas);
             }
         }
     }
