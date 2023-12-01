@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.UI;
+using TMPro;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -25,12 +27,15 @@ public class NewBehaviourScript : MonoBehaviour
     public float distanciamax = 1000;
 
     //fin bomba
+    public TextMeshProUGUI puntajepato;
+    public TextMeshProUGUI cuentabomba;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        puntajepato.text = puntaje.ToString();
+        cuentabomba.text = bombas.ToString();
     }
 
     // Update is called once per frame
@@ -73,10 +78,11 @@ public class NewBehaviourScript : MonoBehaviour
                     if (objetoGolpeado.GetComponent<Puntajeybomba>().bomba == true)
                     {
                         bombas = bombas + 1;
-                        print(bombas);
+                        cuentabomba.text = bombas.ToString();
                     }
                     puntaje = puntaje + objetoGolpeado.GetComponent<Puntajeybomba>().puntaje;
-                    print("Tu puntaje es " + puntaje);
+
+                    puntajepato.text = puntaje.ToString();
 
                 }
             }
@@ -103,10 +109,23 @@ public class NewBehaviourScript : MonoBehaviour
                 bombita = Instantiate(bombita, transform.position, transform.rotation);
                 bombita.GetComponent<Rigidbody>().AddForce((disparadorbomba.transform.forward * impulso)+ ((disparadorbomba.transform.up * impulso)));
                 bombas = bombas - 1;
-                print("bombas actuales = "+bombas);
+                cuentabomba.text = bombas.ToString();
+
+
+                //aca meter el script de overlap sphere y eliminar bomba
+
+
+
+                Invoke("destruirbombita", 3);
             }
+            
         }
+        }
+    public void destruirbombita()
+    {
+        Destroy(bombita);
     }
 }
+
 
     
