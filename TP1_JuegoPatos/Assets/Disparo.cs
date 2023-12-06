@@ -106,26 +106,17 @@ public class NewBehaviourScript : MonoBehaviour
                 //print(impulso);
 
                 //float potenciafinal = impulso * 3;
-                bombita = Instantiate(bombita, transform.position, transform.rotation);
+                GameObject bombitax = Instantiate(bombita, transform.position, transform.rotation);
                 bombita.GetComponent<Rigidbody>().AddForce((disparadorbomba.transform.forward * impulso)+ ((disparadorbomba.transform.up * impulso)));
                 bombas = bombas - 1;
                 cuentabomba.text = bombas.ToString();
 
-
-                //aca meter el script de overlap sphere y eliminar bomba
-
-
-
-                Invoke("destruirbombita", 3);
             }
             
         }
-        }
-    public void destruirbombita()
-    {
-        Destroy(bombita);
     }
 }
+
 
 
     
