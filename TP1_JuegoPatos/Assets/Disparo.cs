@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject bombita;
     public GameObject disparadorbomba;
     public int tiempoprueva = 25;
-    public int cuentabombas = 3;
+    public int cuentabombas = 2;
     float impulso = 0;
     float auximpulso = 0;
 
@@ -29,6 +30,10 @@ public class NewBehaviourScript : MonoBehaviour
     //fin bomba
     public TextMeshProUGUI puntajepato;
     public TextMeshProUGUI cuentabomba;
+    public Image impulsometro;
+    public bool bombaimplso = false;
+    public Image balaLista;
+
 
 
     // Start is called before the first frame update
@@ -41,6 +46,11 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        balaLista.fillAmount = 1- ((auxreloj - Time.time) / cooldown);
+        if (bombaimplso == true) 
+        { 
+        impulsometro.fillAmount = (Time.time - auximpulso)/tiempomax;
+        }
         //script disparo
         //Debug.DrawLine(disparadorray.transform.position, (disparadorray.transform.forward * 1000000) + disparadorray.transform.position, Color.red);
         if (Time.time > auxreloj)
@@ -92,9 +102,15 @@ public class NewBehaviourScript : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             auximpulso = Time.time;
+            if (bombas > 0)
+            {
+                bombaimplso = true;
+            }
         }
         if (Input.GetMouseButtonUp(1))
-        { 
+        {
+            bombaimplso = false;
+            impulsometro.fillAmount = 0;
             if (bombas > 0)
             {
                 impulso = (Time.time - auximpulso);
@@ -107,9 +123,10 @@ public class NewBehaviourScript : MonoBehaviour
 
                 //float potenciafinal = impulso * 3;
                 GameObject bombitax = Instantiate(bombita, transform.position, transform.rotation);
-                bombita.GetComponent<Rigidbody>().AddForce((disparadorbomba.transform.forward * impulso)+ ((disparadorbomba.transform.up * impulso)));
+                bombitax.GetComponent<Rigidbody>().AddForce((disparadorbomba.transform.forward * impulso)+ ((disparadorbomba.transform.up * impulso)));
                 bombas = bombas - 1;
                 cuentabomba.text = bombas.ToString();
+                bombaimplso = false;
 
             }
             
