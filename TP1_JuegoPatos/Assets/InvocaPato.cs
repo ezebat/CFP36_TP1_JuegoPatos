@@ -15,7 +15,7 @@ public class InvocaPato : MonoBehaviour
     public int puntoscuerpoespecial = 200;
     public int puntoscabezaespecial = 500;
     public int puntospicoespecial = 900;
-
+    public int puntosBomba = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +39,7 @@ public class InvocaPato : MonoBehaviour
         espato.GetComponent<Puntajeybomba>().puntaje = puntoscuerpo;
         espato.GetComponent<cambiarcabeza>().cabeza.GetComponent<Puntajeybomba>().puntaje = puntoscabeza;
         espato.GetComponent<cambiarcabeza>().pico.GetComponent<Puntajeybomba>().puntaje = puntospico;
+        espato.GetComponent<cambiarcabeza>().pico.GetComponent<Puntajeybomba>().puntajeBomba = puntosBomba;
 
         if (especial > 5) {
             espato.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);

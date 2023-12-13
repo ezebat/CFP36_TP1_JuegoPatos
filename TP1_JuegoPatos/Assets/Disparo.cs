@@ -28,7 +28,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float distanciamax = 1000;
 
     //fin bomba
-    public TextMeshProUGUI puntajepato;
+   // public TextMeshProUGUI puntajepato;
     public TextMeshProUGUI cuentabomba;
     public Image impulsometro;
     public bool bombaimplso = false;
@@ -39,13 +39,14 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        puntajepato.text = puntaje.ToString();
+        //puntajepato.text = puntaje.ToString();
         cuentabomba.text = bombas.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
+        print (Puntajes.puntaje);
         balaLista.fillAmount = 1- ((auxreloj - Time.time) / cooldown);
         if (bombaimplso == true) 
         { 
@@ -90,10 +91,12 @@ public class NewBehaviourScript : MonoBehaviour
                         bombas = bombas + 1;
                         cuentabomba.text = bombas.ToString();
                     }
-                    puntaje = puntaje + objetoGolpeado.GetComponent<Puntajeybomba>().puntaje;
-
-                    puntajepato.text = puntaje.ToString();
-
+                    
+                    if (objetoGolpeado.GetComponent<Puntajeybomba>() != null)
+                    {
+                        objetoGolpeado.GetComponent<Puntajeybomba>().Disparame();
+                        //puntajepato.text = puntaje.ToString();
+                    }
                 }
             }
         }

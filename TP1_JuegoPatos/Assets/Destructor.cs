@@ -69,10 +69,13 @@ public class Destructor : MonoBehaviour
                     Destroy(objetoGolpeado.GetComponent<cambiarcabeza>().cuerpo);
                     Destroy(objetoGolpeado.GetComponent<cambiarcabeza>().pico);
 
-                   
-                    puntaje = puntaje + objetoGolpeado.GetComponent<Puntajeybomba>().puntaje;
+                    //puntaje = puntaje + objetoGolpeado.GetComponent<Puntajeybomba>().puntaje;
 
-                    //puntajepato.text = puntaje.ToString(); A SOLUCIONAR
+                    if (objetoGolpeado.GetComponent<Puntajeybomba>() != null)
+                    {
+                        objetoGolpeado.GetComponent<Puntajeybomba>().explotado();
+                        //puntajepato.text = puntaje.ToString();
+                    }
                 }
             
         }
