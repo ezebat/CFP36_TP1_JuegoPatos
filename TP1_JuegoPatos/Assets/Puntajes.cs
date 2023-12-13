@@ -5,6 +5,7 @@ using UnityEngine;
 public class Puntajes : MonoBehaviour
 {
     static public float puntaje;
+
     // Start is called before the first frame update
     void Start()
     {

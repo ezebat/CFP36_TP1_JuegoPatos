@@ -28,7 +28,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float distanciamax = 1000;
 
     //fin bomba
-   // public TextMeshProUGUI puntajepato;
+    public TextMeshProUGUI puntajepato;
     public TextMeshProUGUI cuentabomba;
     public Image impulsometro;
     public bool bombaimplso = false;
@@ -47,7 +47,8 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         print (Puntajes.puntaje);
-        balaLista.fillAmount = 1- ((auxreloj - Time.time) / cooldown);
+        puntajepato.text = Puntajes.puntaje.ToString();
+        //balaLista.fillAmount = 1- ((auxreloj - Time.time) / cooldown);
         if (bombaimplso == true) 
         { 
         impulsometro.fillAmount = (Time.time - auximpulso)/tiempomax;
