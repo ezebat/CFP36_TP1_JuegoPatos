@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657683, g: 0.49641126, b: 0.57481736, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657683, g: 0.49641192, b: 0.5748182, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 1057444018}
   - component: {fileID: 1057444017}
   m_Layer: 0
-  m_Name: atras
+  m_Name: d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1888,11 +1888,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.561
+      value: -15.89
       objectReference: {fileID: 0}
     - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.678
+      value: 4.03
       objectReference: {fileID: 0}
     - target: {fileID: 3745636661855847366, guid: 46d4bdc91f2018d4eafdb3bc4dd3cefd, type: 3}
       propertyPath: m_LocalPosition.z
