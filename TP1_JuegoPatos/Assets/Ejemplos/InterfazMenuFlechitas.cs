@@ -8,11 +8,12 @@ public class InterfazMenuFlechitas : MonoBehaviour
     public int flag;
     public GameObject piso;
     public GameObject pato;
-    public GameObject[,] matrizinha;
+    public GameObject ezquina;
+
     // Start is called before the first frame update
     void Start()
     {
-        matrizinha =  new GameObject[10, 10];
+      
         print("soy: " + gameObject.name);
     }
 
@@ -23,9 +24,10 @@ public class InterfazMenuFlechitas : MonoBehaviour
         {
             flag--;
             flag = flag % patos.Count;
+         //4/3=1 5/3=1 6/3=2
 
             SwitchOff();
-            patos[flag].SetActive(true);
+            patos[Mathf.Abs(flag)].SetActive(true);
             
         }
         if (Input.GetKeyDown(KeyCode.Space))
@@ -34,9 +36,9 @@ public class InterfazMenuFlechitas : MonoBehaviour
             {
                 piso.SetActive(false);
             }
-            if (flag==1)
+            if (Mathf.Abs(flag) == 1)
             {
-                
+                pato.transform.position = ezquina.transform.position;
             }
         }
     }

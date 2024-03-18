@@ -12,6 +12,8 @@ public class MovimientoCC : MonoBehaviour
     public int[,] matriz;
     public InterfazMenuFlechitas matrix;
     public Vector2 direccion;
+    public Transform jetpackDir;
+    public float JetpackForce;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class MovimientoCC : MonoBehaviour
      
         CC = GetComponent<CharacterController>();
          
-        gameObject.name = "acaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+     
     }
 
     // Update is called once per frame
@@ -36,8 +38,15 @@ public class MovimientoCC : MonoBehaviour
         VerticalForce += gravity*Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
+            if (CC.isGrounded)
             VerticalForce  = new Vector3(0, JumpForce, 0);
+           
+            
+        }
+        if (!CC.isGrounded&& Input.GetKey(KeyCode.Space))
+        {
+            //jetpack
+            VerticalForce += JetpackForce * Time.deltaTime * jetpackDir.forward;
         }
         ////////////////////////////////////////////////////////////////////////////////////
         movement += VerticalForce;
