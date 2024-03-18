@@ -9,11 +9,17 @@ public class MovimientoCC : MonoBehaviour
     public Vector3 gravity;
     public float JumpForce;
     public Vector3 VerticalForce;
-
+    public int[,] matriz;
+    public InterfazMenuFlechitas matrix;
+    public Vector2 direccion;
     // Start is called before the first frame update
     void Start()
     {
+       
+     
         CC = GetComponent<CharacterController>();
+         
+        gameObject.name = "acaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
     }
 
     // Update is called once per frame
@@ -36,5 +42,10 @@ public class MovimientoCC : MonoBehaviour
         ////////////////////////////////////////////////////////////////////////////////////
         movement += VerticalForce;
         CC.Move(movement*Time.deltaTime);
+
+        if (VerticalForce.y<=0)
+        {
+            Debug.Log(transform.position.y);
+        }
     }
 }

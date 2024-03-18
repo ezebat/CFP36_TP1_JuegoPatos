@@ -8,6 +8,7 @@ public class EjemploMovimiento : MonoBehaviour
     public float velocidadR;
     public float walkSpeed;
     public float sprintSpeed;
+    
     // Start is called before the first frame update
     void Start()
     {
