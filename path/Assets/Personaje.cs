@@ -22,5 +22,8 @@ public class Personaje : MonoBehaviour
     {
         nav = GetComponent<NavMeshAgent>();
         nav.SetDestination(target.position);
+
+
+
     }
 }

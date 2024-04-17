@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,10 +9,9 @@ public class Mouse : MonoBehaviour
 {
     // Start is called before the first frame update
     public NavMeshAgent nav;
-    public float velocidad = 4;
-    float vel;
-    float auxreloj =1;
-    public float cooldown = 4;
+    public float velocidadnorm = 4;
+    public float tiempovolver = 4f;
+  
 
     void Start()
     {
@@ -29,20 +29,16 @@ public class Mouse : MonoBehaviour
             nav.SetDestination(hit.point);
 
         }
-        if (Time.time > auxreloj)
-        {
-
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-            auxreloj = Time.time + cooldown;
-            vel = velocidad;
-        }
-        else vel = 1;
-            
-        nav.speed = 3.5f * vel;
-         
-        }
-        }
+       }
+    public void powerUp()
+    {
+        Invoke("normal", tiempovolver);
+    }
+    void normal()
+    {
+        
+        nav.GetComponent<NavMeshAgent>().speed = velocidadnorm;
+    }
 }
 
 

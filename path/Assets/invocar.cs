@@ -6,27 +6,28 @@ public class invocar : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    public int tiempocreacion = 10;
-    public GameObject Invocar;
-    int bandera = 0;
+    public float tiempocreacion = 5f;
+    public GameObject Invocacion;
+    
 
     void Start()
     {
-        
+        Invoke("crear", tiempocreacion);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (bandera < 1)
-            Debug.Log(bandera);
-            
-            InvokeRepeating("crear", 1, 1);
+                  
+    }
+    private void Awake()
+    {
         
     }
     void crear()
     {
-        GameObject Creado = Instantiate(Invocar, transform.position, transform.rotation);
-        bandera = 2;
+         
+        GameObject Creado = Instantiate(Invocacion, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }
