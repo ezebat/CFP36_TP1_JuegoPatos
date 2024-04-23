@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Personaje.cs" />
     <Compile Include="Assets\PowerUp.cs" />
+    <Compile Include="Assets\CCmove.cs" />
     <Compile Include="Assets\animacion.cs" />
     <Compile Include="Assets\Mouse.cs" />
     <Compile Include="Assets\invocar.cs" />
